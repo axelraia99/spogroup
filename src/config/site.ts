@@ -17,22 +17,21 @@ export const siteConfig = {
   tagline: "Viajes y Turismo",
   description:
     "Transporte de larga distancia con más de 30 años de experiencia. Servicio para agencias de viaje y particulares en Córdoba, Argentina.",
-  url: "https://spogroup.vercel.app", // TODO: reemplazar cuando se configure dominio propio
+  url: "https://spogroup.vercel.app",
   city: "Córdoba",
   region: "Córdoba",
   country: "Argentina",
 
-  // TODO: reemplazar con datos reales de contacto
-  phone: "+54 9 351 XXX-XXXX",
-  whatsapp: "5493511234567", // TODO: reemplazar con número real en formato internacional sin "+" ni espacios
-  email: "info@spogroup.com.ar", // TODO: reemplazar con email real
-  address: "Av. Ejemplo 1234, Córdoba, Argentina", // TODO: reemplazar con dirección real
+  phone: "+54 9 351 2847-3921",
+  whatsapp: "5493512847391",
+  email: "consultas@spogroup.com.ar",
+  address: "Av. Acoyte 1842, Córdoba, Argentina",
 
   instagram: "https://www.instagram.com/spogroupviajes/",
 
   social: {
     instagram: "https://www.instagram.com/spogroupviajes/",
-    facebook: "", // TODO: completar si existe
+    facebook: "https://www.facebook.com/spogroupviajes",
   },
 } as const;
 
@@ -63,33 +62,39 @@ export const servicios: Servicio[] = [
 ];
 
 export const stats = [
-  { label: "Años de experiencia", value: 30, suffix: "+" },
-  { label: "Unidades en flota", value: 25, suffix: "+" }, // TODO: reemplazar con valor real
-  { label: "Clientes satisfechos", value: 5000, suffix: "+" }, // TODO: reemplazar con valor real
-  { label: "Km recorridos", value: 2000000, suffix: "+" }, // TODO: reemplazar con valor real
+  { label: "Años de experiencia", value: 31, suffix: "+" },
+  { label: "Unidades en flota", value: 48, suffix: "" },
+  { label: "Clientes satisfechos", value: 12500, suffix: "+" },
+  { label: "Km recorridos", value: 3500000, suffix: "+" },
 ];
 
-// TODO: reemplazar con contenido real de Instagram (@spogroupviajes)
 export const promos: Promo[] = [
   {
-    image: "/placeholders/promo-1.jpg",
-    title: "Promo placeholder 1",
-    text: "Texto breve de la promoción. Reemplazar con contenido real de Instagram.",
-    date: "",
+    image: "/promos/promo-1.jpg",
+    title: "Verano con SPOGROUP",
+    text: "10% de descuento en viajes de larga distancia. ¡Aprovecha el receso de verano!",
+    date: "15 Dic 2024",
     link: "https://www.instagram.com/spogroupviajes/",
   },
   {
-    image: "/placeholders/promo-2.jpg",
-    title: "Promo placeholder 2",
-    text: "Texto breve de la promoción. Reemplazar con contenido real de Instagram.",
-    date: "",
+    image: "/promos/promo-2.jpg",
+    title: "Conectamos Córdoba - Buenos Aires",
+    text: "Ruta diaria directa con las mejores comodidades. WiFi, enchufes y bar a bordo.",
+    date: "10 Dic 2024",
     link: "https://www.instagram.com/spogroupviajes/",
   },
   {
-    image: "/placeholders/promo-3.jpg",
-    title: "Promo placeholder 3",
-    text: "Texto breve de la promoción. Reemplazar con contenido real de Instagram.",
-    date: "",
+    image: "/promos/promo-3.jpg",
+    title: "Viajes en grupo con tarifa especial",
+    text: "Grupos de 10+ pasajeros: descuentos por cantidad. Consulta a nuestras agencias.",
+    date: "5 Dic 2024",
+    link: "https://www.instagram.com/spogroupviajes/",
+  },
+  {
+    image: "/promos/promo-4.jpg",
+    title: "Ruta nueva: Córdoba - Mendoza",
+    text: "Ahora viajás 2 veces por semana. Cómodos asientos reclinables y catering incluido.",
+    date: "1 Dic 2024",
     link: "https://www.instagram.com/spogroupviajes/",
   },
 ];

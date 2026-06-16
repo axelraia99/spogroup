@@ -12,7 +12,7 @@ export default function Footer() {
               alt="SPOGROUP Viajes y Turismo"
               width={140}
               height={48}
-              className="h-10 w-auto brightness-0 invert"
+              className="h-7 w-auto brightness-0 invert"
             />
             <p className="mt-4 max-w-xs text-sm text-gray-400">
               {siteConfig.description}

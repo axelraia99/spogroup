@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { promos } from "@/config/site";
 
@@ -14,8 +15,7 @@ export default function Promos() {
           Seguinos en Instagram para no perderte nuestras promociones.
         </p>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-3">
-          {/* TODO: reemplazar con contenido real de Instagram (@spogroupviajes) */}
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {promos.map((promo, i) => (
             <motion.a
               key={promo.title}
@@ -26,16 +26,24 @@ export default function Promos() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-lg"
+              className="group block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-lg"
             >
-              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-brand-gray-light/40 to-brand-gray/40 text-sm text-brand-gray">
-                Imagen placeholder
+              <div className="relative aspect-video overflow-hidden bg-brand-gray/20">
+                <Image
+                  src={promo.image}
+                  alt={promo.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
-              <div className="p-5">
+              <div className="p-4">
                 <h3 className="font-semibold text-brand-black">
                   {promo.title}
                 </h3>
                 <p className="mt-2 text-sm text-brand-gray">{promo.text}</p>
+                {promo.date && (
+                  <p className="mt-2 text-xs text-brand-gray-light">{promo.date}</p>
+                )}
               </div>
             </motion.a>
           ))}

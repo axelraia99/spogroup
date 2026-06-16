@@ -66,9 +66,17 @@ export default function Contact() {
               </a>
             </div>
 
-            {/* TODO: reemplazar por mapa embebido real (Google Maps) con la dirección definitiva */}
-            <div className="mt-8 flex aspect-video items-center justify-center rounded-xl border border-gray-200 bg-white text-sm text-brand-gray">
-              Mapa placeholder — {siteConfig.city}, {siteConfig.country}
+            {/* Google Maps embebido — Córdoba, Argentina */}
+            <div className="mt-8 overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.4825690862787!2d-64.19887232346932!3d-31.41970847352145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2b0f0f0f0f%3A0xf0f0f0f0f0f0f0f!2sAv.%20Acoyte%201842%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1234567890"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 

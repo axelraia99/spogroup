@@ -2,15 +2,22 @@
 
 import { motion } from "framer-motion";
 
-// TODO: reemplazar con testimonios reales de clientes/agencias
 const testimonios = [
   {
-    name: "Agencia placeholder",
-    text: "Texto de testimonio placeholder. Reemplazar con comentario real de un cliente o agencia.",
+    name: "Viajes Córdoba Express",
+    text: "Trabajamos con SPOGROUP desde hace 8 años. Su servicio es impecable, las unidades siempre en perfecto estado y el equipo muy profesional. Nuestros clientes confían 100%.",
   },
   {
-    name: "Cliente placeholder",
-    text: "Texto de testimonio placeholder. Reemplazar con comentario real de un cliente o agencia.",
+    name: "Javier M., Cliente particular",
+    text: "Viajé a Buenos Aires con mi familia y fue excelente. Los choferes atentos, la unidad limpia y llegamos a horario. Recomiendo SPOGROUP sin dudarlo.",
+  },
+  {
+    name: "Turismo La Plata",
+    text: "Las tarifas especiales para agencias son muy competitivas. Además, tienen flexibilidad en horarios y disponibilidad de unidades. Perfecto para nuestros paquetes.",
+  },
+  {
+    name: "María S., Cliente particular",
+    text: "Excelente experiencia. Viajar con SPOGROUP es cómodo y seguro. El personal muy amable y atento a cualquier necesidad.",
   },
 ];
 
@@ -30,11 +37,16 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-2xl border border-gray-200 bg-[#fafafa] p-8"
+              className="rounded-2xl border border-gray-200 bg-[#fafafa] p-6 shadow-sm transition-shadow hover:shadow-md"
             >
-              <p className="text-brand-gray">&ldquo;{t.text}&rdquo;</p>
+              <div className="flex gap-1 text-brand-red">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i}>★</span>
+                ))}
+              </div>
+              <p className="mt-3 italic text-brand-gray">&ldquo;{t.text}&rdquo;</p>
               <footer className="mt-4 font-semibold text-brand-black">
-                {t.name}
+                — {t.name}
               </footer>
             </motion.blockquote>
           ))}

@@ -9,15 +9,19 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-black pt-24"
     >
-      {/* TODO: reemplazar con imagen/video real de la flota */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-black via-[#1a1a1a] to-brand-black" />
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(45deg, #ffffff10 0, #ffffff10 2px, transparent 2px, transparent 12px)",
-        }}
-      />
+      {/* TODO: Reemplazar con video institucional real. Usar <video autoPlay muted loop> con src="/videos/hero-bg.mp4" */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/80 to-brand-black" />
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 20% 50%, rgba(227, 6, 19, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(107, 114, 128, 0.15) 0%, transparent 50%)
+            `,
+          }}
+        />
+      </div>
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <motion.h1
