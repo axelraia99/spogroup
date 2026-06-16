@@ -1,0 +1,152 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { siteConfig, whatsappLink } from "@/config/site";
+
+export default function Contact() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [type, setType] = useState<"agencia" | "particular">("particular");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const text = [
+      `Hola, soy ${name || "(nombre)"}.`,
+      `Tipo de cliente: ${type === "agencia" ? "Agencia de viajes" : "Particular"}.`,
+      phone ? `Teléfono/email de contacto: ${phone}.` : "",
+      message ? `Mensaje: ${message}` : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+
+    window.open(whatsappLink(text), "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <section id="contacto" className="bg-[#fafafa] py-20 sm:py-28">
+      <div className="mx-auto max-w-5xl px-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="grid gap-12 sm:grid-cols-2"
+        >
+          <div>
+            <h2 className="text-3xl font-bold text-brand-black sm:text-4xl">
+              Contacto
+            </h2>
+            <p className="mt-4 text-brand-gray">
+              Completá el formulario y te respondemos por WhatsApp, o
+              contactanos directamente.
+            </p>
+
+            <div className="mt-8 space-y-3 text-brand-black">
+              <p>
+                <span className="font-semibold">Teléfono: </span>
+                {siteConfig.phone}
+              </p>
+              <p>
+                <span className="font-semibold">Email: </span>
+                {siteConfig.email}
+              </p>
+              <p>
+                <span className="font-semibold">Dirección: </span>
+                {siteConfig.address}
+              </p>
+              <a
+                href={siteConfig.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block font-semibold text-brand-red hover:underline"
+              >
+                Instagram @spogroupviajes
+              </a>
+            </div>
+
+            {/* TODO: reemplazar por mapa embebido real (Google Maps) con la dirección definitiva */}
+            <div className="mt-8 flex aspect-video items-center justify-center rounded-xl border border-gray-200 bg-white text-sm text-brand-gray">
+              Mapa placeholder — {siteConfig.city}, {siteConfig.country}
+            </div>
+          </div>
+
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm"
+          >
+            <div>
+              <label className="mb-1 block text-sm font-medium text-brand-black">
+                Nombre
+              </label>
+              <input
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-brand-red focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label className="mb-1 block text-sm font-medium text-brand-black">
+                Teléfono o email
+              </label>
+              <input
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-brand-red focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <span className="mb-1 block text-sm font-medium text-brand-black">
+                Tipo de cliente
+              </span>
+              <div className="flex gap-6">
+                <label className="flex items-center gap-2 text-sm text-brand-black">
+                  <input
+                    type="radio"
+                    name="type"
+                    checked={type === "particular"}
+                    onChange={() => setType("particular")}
+                  />
+                  Particular
+                </label>
+                <label className="flex items-center gap-2 text-sm text-brand-black">
+                  <input
+                    type="radio"
+                    name="type"
+                    checked={type === "agencia"}
+                    onChange={() => setType("agencia")}
+                  />
+                  Agencia
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label className="mb-1 block text-sm font-medium text-brand-black">
+                Mensaje
+              </label>
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                rows={4}
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-brand-red focus:outline-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full rounded-full bg-brand-red px-6 py-3 text-base font-semibold text-white transition-transform hover:scale-105"
+            >
+              Enviar por WhatsApp
+            </button>
+          </form>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

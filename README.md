@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SPOGROUP — Landing Page
 
-## Getting Started
+Landing page (one-page) para SPOGROUP Viajes y Turismo. Next.js (App Router) + TypeScript + Tailwind CSS + Framer Motion.
 
-First, run the development server:
+## Correr el proyecto
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build de producción:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Dónde completar los datos pendientes
 
-To learn more about Next.js, take a look at the following resources:
+Todo lo editable está centralizado en [`src/config/site.ts`](src/config/site.ts):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Contacto**: `phone`, `whatsapp` (formato internacional sin "+" ni espacios, ej. `5493511234567`), `email`, `address`.
+- **Instagram / redes**: `instagram`, `social`.
+- **Estadísticas** (`stats`): años, unidades, clientes, km recorridos — reemplazar valores placeholder.
+- **Promos** (`promos`): array vacío/placeholder listo para pegar contenido real de Instagram (imagen, título, texto, fecha, link).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Otros placeholders a buscar en el código (marcados con `TODO:`):
 
-## Deploy on Vercel
+- `src/components/Fleet.tsx` — fotos reales de la flota (reemplazar bloques placeholder por `next/image`).
+- `src/components/Testimonials.tsx` — testimonios reales de clientes/agencias.
+- `src/components/Contact.tsx` — mapa embebido real (Google Maps) con la dirección definitiva.
+- `src/app/layout.tsx` / `src/config/site.ts` — `siteConfig.url` cuando se configure el dominio propio en Vercel.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+El formulario de contacto no envía mail: arma un mensaje y abre WhatsApp con los datos completados.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy (Vercel + GitHub)
+
+1. Crear un repositorio en GitHub y subir este proyecto (ver instrucciones que te dio Claude Code en el chat).
+2. En [vercel.com/new](https://vercel.com/new), importar ese repositorio.
+3. Vercel detecta Next.js automáticamente — no requiere variables de entorno.
+4. Cada `git push` a la rama principal dispara un deploy automático a producción; cada Pull Request genera un preview deploy.
