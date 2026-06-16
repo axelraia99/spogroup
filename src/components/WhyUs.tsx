@@ -11,9 +11,9 @@ const items = [
 
 export default function WhyUs() {
   return (
-    <section className="bg-brand-black py-20 sm:py-28">
+    <section className="bg-black py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-center text-3xl font-bold text-white sm:text-4xl">
+        <h2 className="text-center text-3xl font-bold text-cream-strong sm:text-4xl">
           Por qué elegirnos
         </h2>
 
@@ -25,12 +25,12 @@ export default function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.12 }}
-              className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center"
+              className="rounded-2xl bg-card-2 p-8 text-center"
             >
               <p className="text-4xl font-bold text-brand-red">
                 <AnimatedCounter value={item.value} suffix={item.suffix} />
               </p>
-              <p className="mt-3 text-gray-300">{item.label}</p>
+              <p className="mt-3 text-gray-400">{item.label}</p>
             </motion.div>
           ))}
         </div>

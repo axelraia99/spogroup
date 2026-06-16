@@ -1,70 +1,66 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { whatsappLink } from "@/config/site";
+import WordsPullUp from "./WordsPullUp";
 
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-black pt-24"
-    >
-      {/* TODO: Reemplazar con video institucional real. Usar <video autoPlay muted loop> con src="/videos/hero-bg.mp4" */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-black/80 to-brand-black" />
+    <section id="top" className="h-screen p-4 md:p-6">
+      <div className="relative h-full overflow-hidden rounded-2xl md:rounded-[2rem]">
+        {/* TODO: reemplazar por <video autoPlay loop muted playsInline> con video institucional real de la flota */}
         <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: `
-              radial-gradient(circle at 20% 50%, rgba(227, 6, 19, 0.15) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(107, 114, 128, 0.15) 0%, transparent 50%)
-            `,
-          }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/fleet/fleet2.jpg)" }}
         />
-      </div>
+        <div className="noise-overlay absolute inset-0 opacity-[0.7] mix-blend-overlay pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/80" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl"
-        >
-          Transporte de larga distancia con{" "}
-          <span className="text-brand-red">+30 años</span> de experiencia
-        </motion.h1>
+        <div className="absolute bottom-0 left-0 right-0 px-6 pb-10 sm:px-10 sm:pb-14 md:px-14 md:pb-16">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:items-end">
+            <div className="md:col-span-8">
+              <h1
+                className="text-[26vw] leading-[0.85] font-medium tracking-[-0.07em] sm:text-[24vw] md:text-[22vw] lg:text-[20vw] xl:text-[19vw] 2xl:text-[20vw]"
+                style={{ color: "#E1E0CC" }}
+              >
+                <WordsPullUp text="SPOGROUP" showAsterisk />
+              </h1>
+            </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-          className="mx-auto mt-6 max-w-2xl text-lg text-gray-300 sm:text-xl"
-        >
-          SPOGROUP conecta destinos en todo el país, brindando un servicio
-          confiable para agencias de viaje y particulares.
-        </motion.p>
+            <div className="md:col-span-4">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="text-xs leading-[1.2] text-primary/70 sm:text-sm md:text-base"
+              >
+                SPOGROUP es una red de transporte de larga distancia con más
+                de 30 años de trayectoria, uniendo agencias de viaje y
+                particulares a través de cada ruta del país.
+              </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-        >
-          <a
-            href={whatsappLink("Hola, quiero cotizar un viaje.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full bg-brand-red px-8 py-3 text-base font-semibold text-white transition-transform hover:scale-105"
-          >
-            Cotizar ahora
-          </a>
-          <a
-            href="#servicios"
-            className="rounded-full border border-white/30 px-8 py-3 text-base font-semibold text-white transition-colors hover:border-brand-red hover:text-brand-red"
-          >
-            Conocer servicios
-          </a>
-        </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="mt-6"
+              >
+                <a
+                  href={whatsappLink("Hola, quiero cotizar un viaje.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-full bg-cream px-5 py-2 text-sm font-medium text-black transition-all hover:gap-3 sm:text-base"
+                >
+                  Cotizar ahora
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-black transition-transform group-hover:scale-110 sm:h-10 sm:w-10">
+                    <ArrowRight className="h-4 w-4 text-cream" />
+                  </span>
+                </a>
+              </motion.div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

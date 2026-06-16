@@ -25,7 +25,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contacto" className="bg-[#fafafa] py-20 sm:py-28">
+    <section id="contacto" className="bg-black py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0 }}
@@ -35,25 +35,25 @@ export default function Contact() {
           className="grid gap-12 sm:grid-cols-2"
         >
           <div>
-            <h2 className="text-3xl font-bold text-brand-black sm:text-4xl">
+            <h2 className="text-3xl font-bold text-cream-strong sm:text-4xl">
               Contacto
             </h2>
-            <p className="mt-4 text-brand-gray">
+            <p className="mt-4 text-gray-400">
               Completá el formulario y te respondemos por WhatsApp, o
               contactanos directamente.
             </p>
 
-            <div className="mt-8 space-y-3 text-brand-black">
+            <div className="mt-8 space-y-3 text-cream">
               <p>
-                <span className="font-semibold">Teléfono: </span>
+                <span className="font-semibold text-cream-strong">Teléfono: </span>
                 {siteConfig.phone}
               </p>
               <p>
-                <span className="font-semibold">Email: </span>
+                <span className="font-semibold text-cream-strong">Email: </span>
                 {siteConfig.email}
               </p>
               <p>
-                <span className="font-semibold">Dirección: </span>
+                <span className="font-semibold text-cream-strong">Dirección: </span>
                 {siteConfig.address}
               </p>
               <a
@@ -67,7 +67,7 @@ export default function Contact() {
             </div>
 
             {/* Google Maps embebido — Córdoba, Argentina */}
-            <div className="mt-8 overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+            <div className="mt-8 overflow-hidden rounded-xl opacity-90">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.4825690862787!2d-64.19887232346932!3d-31.41970847352145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2b0f0f0f0f%3A0xf0f0f0f0f0f0f0f!2sAv.%20Acoyte%201842%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1234567890"
                 width="100%"
@@ -82,38 +82,38 @@ export default function Contact() {
 
           <form
             onSubmit={handleSubmit}
-            className="space-y-4 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm"
+            className="space-y-4 rounded-2xl bg-card-2 p-8"
           >
             <div>
-              <label className="mb-1 block text-sm font-medium text-brand-black">
+              <label className="mb-1 block text-sm font-medium text-cream-strong">
                 Nombre
               </label>
               <input
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-brand-red focus:outline-none"
+                className="w-full rounded-lg border border-white/10 bg-black px-4 py-2 text-base text-cream focus:border-brand-red focus:outline-none"
               />
             </div>
 
             <div>
-              <label className="mb-1 block text-sm font-medium text-brand-black">
+              <label className="mb-1 block text-sm font-medium text-cream-strong">
                 Teléfono o email
               </label>
               <input
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-brand-red focus:outline-none"
+                className="w-full rounded-lg border border-white/10 bg-black px-4 py-2 text-base text-cream focus:border-brand-red focus:outline-none"
               />
             </div>
 
             <div>
-              <span className="mb-1 block text-sm font-medium text-brand-black">
+              <span className="mb-1 block text-sm font-medium text-cream-strong">
                 Tipo de cliente
               </span>
               <div className="flex gap-6">
-                <label className="flex items-center gap-2 text-sm text-brand-black">
+                <label className="flex items-center gap-2 text-sm text-cream">
                   <input
                     type="radio"
                     name="type"
@@ -122,7 +122,7 @@ export default function Contact() {
                   />
                   Particular
                 </label>
-                <label className="flex items-center gap-2 text-sm text-brand-black">
+                <label className="flex items-center gap-2 text-sm text-cream">
                   <input
                     type="radio"
                     name="type"
@@ -135,14 +135,14 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="mb-1 block text-sm font-medium text-brand-black">
+              <label className="mb-1 block text-sm font-medium text-cream-strong">
                 Mensaje
               </label>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows={4}
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-brand-red focus:outline-none"
+                className="w-full rounded-lg border border-white/10 bg-black px-4 py-2 text-base text-cream focus:border-brand-red focus:outline-none"
               />
             </div>
 

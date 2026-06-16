@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 import { whatsappLink } from "@/config/site";
 
 const beneficios = [
@@ -23,10 +24,10 @@ export default function Agencies() {
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-red">
             B2B
           </p>
-          <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold text-cream-strong sm:text-4xl">
             Para Agencias de Viaje
           </h2>
-          <p className="mt-6 text-lg text-gray-300">
+          <p className="mt-6 text-lg text-gray-400">
             Trabajamos junto a agencias de viaje en todo el país, ofreciendo
             un servicio confiable que se adapta a las necesidades de cada
             operación.
@@ -51,9 +52,9 @@ export default function Agencies() {
           {beneficios.map((beneficio) => (
             <li
               key={beneficio}
-              className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 text-gray-200"
+              className="flex items-start gap-3 rounded-xl bg-card-2 p-4 text-cream"
             >
-              <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-brand-red" />
+              <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
               {beneficio}
             </li>
           ))}

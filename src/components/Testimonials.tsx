@@ -23,9 +23,9 @@ const testimonios = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-black py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-6">
-        <h2 className="text-center text-3xl font-bold text-brand-black sm:text-4xl">
+        <h2 className="text-center text-3xl font-bold text-cream-strong sm:text-4xl">
           Testimonios
         </h2>
 
@@ -37,15 +37,15 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-2xl border border-gray-200 bg-[#fafafa] p-6 shadow-sm transition-shadow hover:shadow-md"
+              className="rounded-2xl bg-card-2 p-6 transition-colors"
             >
               <div className="flex gap-1 text-brand-red">
                 {[...Array(5)].map((_, i) => (
                   <span key={i}>★</span>
                 ))}
               </div>
-              <p className="mt-3 italic text-brand-gray">&ldquo;{t.text}&rdquo;</p>
-              <footer className="mt-4 font-semibold text-brand-black">
+              <p className="mt-3 italic text-gray-400">&ldquo;{t.text}&rdquo;</p>
+              <footer className="mt-4 font-semibold text-cream-strong">
                 — {t.name}
               </footer>
             </motion.blockquote>

@@ -41,12 +41,12 @@ const units: { name: string; image: string; features: Feature[] }[] = [
 
 export default function Fleet() {
   return (
-    <section id="flota" className="bg-white py-20 sm:py-28">
+    <section id="flota" className="bg-black py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-center text-3xl font-bold text-brand-black sm:text-4xl">
+        <h2 className="text-center text-3xl font-bold text-cream-strong sm:text-4xl">
           Flota
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-brand-gray">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-gray-400">
           Unidades modernas y equipadas para garantizar comodidad y seguridad
           en cada viaje.
         </p>
@@ -59,7 +59,7 @@ export default function Fleet() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm transition-shadow hover:shadow-lg"
+              className="overflow-hidden rounded-2xl bg-card-2 transition-colors"
             >
               <div className="group relative aspect-[4/3] overflow-hidden">
                 <Image
@@ -71,14 +71,14 @@ export default function Fleet() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-brand-black">
+                <h3 className="text-lg font-semibold text-cream-strong">
                   {unit.name}
                 </h3>
                 <ul className="mt-4 space-y-3">
                   {unit.features.map((feature) => (
                     <li
                       key={feature.label}
-                      className="flex items-center gap-3 text-sm text-brand-gray"
+                      className="flex items-center gap-3 text-sm text-gray-400"
                     >
                       <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
                         <Icon name={feature.icon} className="h-4 w-4" />

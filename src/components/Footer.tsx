@@ -3,7 +3,7 @@ import { navLinks, siteConfig } from "@/config/site";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black py-12 text-gray-300">
+    <footer className="border-t border-white/5 bg-black py-12 text-gray-400">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center justify-between gap-8 sm:flex-row sm:items-start">
           <div>
