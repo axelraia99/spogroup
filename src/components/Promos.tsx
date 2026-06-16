@@ -17,7 +17,7 @@ export default function Promos() {
           Seguinos en Instagram para no perderte nuestras promociones.
         </p>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-14">
           <motion.a
             href={featured.link}
             target="_blank"
@@ -26,7 +26,7 @@ export default function Promos() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5 }}
-            className="group block overflow-hidden rounded-2xl bg-card-2 transition-colors lg:col-span-2"
+            className="group block overflow-hidden rounded-2xl bg-card-2 transition-colors"
           >
             <div className="relative aspect-[16/9] overflow-hidden bg-brand-gray/20">
               <Image
@@ -50,7 +50,7 @@ export default function Promos() {
             </div>
           </motion.a>
 
-          <div className="grid gap-6 sm:grid-cols-3 lg:col-span-1 lg:grid-cols-1">
+          <div className="mt-6 grid gap-6 sm:grid-cols-3">
             {rest.map((promo, i) => (
               <motion.a
                 key={promo.title}

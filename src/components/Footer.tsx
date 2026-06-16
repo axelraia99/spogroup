@@ -1,13 +1,13 @@
 import Image from "next/image";
-import { AtSign } from "lucide-react";
 import { navLinks, siteConfig } from "@/config/site";
+import InstagramIcon from "./InstagramIcon";
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/5 bg-black py-12 text-gray-400">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col items-center justify-between gap-8 sm:flex-row sm:items-start">
-          <div>
+        <div className="grid grid-cols-1 gap-10 text-center sm:grid-cols-3 sm:text-left">
+          <div className="flex flex-col items-center sm:items-start">
             <Image
               src="/logo.png"
               alt="SPOGROUP Viajes y Turismo"
@@ -20,7 +20,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <nav className="flex flex-col gap-2 text-sm">
+          <nav className="flex flex-col items-center gap-2 text-sm sm:items-start">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -32,18 +32,18 @@ export default function Footer() {
             ))}
           </nav>
 
-          <div className="text-sm text-gray-400">
+          <div className="flex flex-col items-center gap-1 text-sm text-gray-400 sm:items-start">
             <p>{siteConfig.address}</p>
-            <p className="mt-1">{siteConfig.phone}</p>
-            <p className="mt-1">{siteConfig.email}</p>
+            <p>{siteConfig.phone}</p>
+            <p>{siteConfig.email}</p>
             <a
               href={siteConfig.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 font-medium text-brand-red hover:underline"
+              className="mt-2 inline-flex items-center gap-2 font-medium text-brand-red hover:underline"
             >
-              <AtSign className="h-4 w-4" strokeWidth={1.5} />
-              Instagram @spogroupviajes
+              <InstagramIcon className="h-4 w-4" />
+              @spogroupviajes
             </a>
           </div>
         </div>

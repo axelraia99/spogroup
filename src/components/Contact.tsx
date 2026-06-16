@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, AtSign } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { siteConfig, whatsappLink } from "@/config/site";
+import InstagramIcon from "./InstagramIcon";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -63,8 +64,8 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 font-semibold text-brand-red hover:underline"
               >
-                <AtSign className="h-4 w-4 flex-shrink-0" strokeWidth={1.5} />
-                Instagram @spogroupviajes
+                <InstagramIcon className="h-4 w-4 flex-shrink-0" />
+                @spogroupviajes
               </a>
             </div>
 
