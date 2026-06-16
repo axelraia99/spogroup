@@ -2,9 +2,19 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Icon from "./Icon";
+import { Usb, BedDouble, Coffee, Wifi, Tv, Snowflake, ShieldCheck } from "lucide-react";
 
-type Feature = { icon: "usb" | "bed" | "coffee" | "wifi" | "tv" | "snowflake" | "shield"; label: string };
+const icons = {
+  usb: Usb,
+  bed: BedDouble,
+  coffee: Coffee,
+  wifi: Wifi,
+  tv: Tv,
+  snowflake: Snowflake,
+  shield: ShieldCheck,
+};
+
+type Feature = { icon: keyof typeof icons; label: string };
 
 const units: { name: string; image: string; features: Feature[] }[] = [
   {
@@ -75,17 +85,20 @@ export default function Fleet() {
                   {unit.name}
                 </h3>
                 <ul className="mt-4 space-y-3">
-                  {unit.features.map((feature) => (
-                    <li
-                      key={feature.label}
-                      className="flex items-center gap-3 text-sm text-gray-400"
-                    >
-                      <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
-                        <Icon name={feature.icon} className="h-4 w-4" />
-                      </span>
-                      {feature.label}
-                    </li>
-                  ))}
+                  {unit.features.map((feature) => {
+                    const IconComp = icons[feature.icon];
+                    return (
+                      <li
+                        key={feature.label}
+                        className="flex items-center gap-3 text-sm text-gray-400"
+                      >
+                        <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
+                          <IconComp className="h-4 w-4" strokeWidth={1.5} />
+                        </span>
+                        {feature.label}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </motion.div>

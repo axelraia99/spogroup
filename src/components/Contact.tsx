@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Phone, Mail, MapPin, AtSign } from "lucide-react";
 import { siteConfig, whatsappLink } from "@/config/site";
 
 export default function Contact() {
@@ -44,24 +45,25 @@ export default function Contact() {
             </p>
 
             <div className="mt-8 space-y-3 text-cream">
-              <p>
-                <span className="font-semibold text-cream-strong">Teléfono: </span>
+              <p className="flex items-center gap-3">
+                <Phone className="h-4 w-4 flex-shrink-0 text-brand-red" strokeWidth={1.5} />
                 {siteConfig.phone}
               </p>
-              <p>
-                <span className="font-semibold text-cream-strong">Email: </span>
+              <p className="flex items-center gap-3">
+                <Mail className="h-4 w-4 flex-shrink-0 text-brand-red" strokeWidth={1.5} />
                 {siteConfig.email}
               </p>
-              <p>
-                <span className="font-semibold text-cream-strong">Dirección: </span>
+              <p className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 flex-shrink-0 text-brand-red" strokeWidth={1.5} />
                 {siteConfig.address}
               </p>
               <a
                 href={siteConfig.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block font-semibold text-brand-red hover:underline"
+                className="inline-flex items-center gap-3 font-semibold text-brand-red hover:underline"
               >
+                <AtSign className="h-4 w-4 flex-shrink-0" strokeWidth={1.5} />
                 Instagram @spogroupviajes
               </a>
             </div>

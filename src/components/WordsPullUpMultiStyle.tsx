@@ -25,7 +25,7 @@ export default function WordsPullUpMultiStyle({
       className={`inline-flex flex-wrap justify-center ${className}`}
     >
       {words.map((item, i) => (
-        <span key={i} className="mr-[0.25em] overflow-hidden">
+        <span key={i} className="mr-[0.25em] overflow-hidden py-[0.15em]">
           <motion.span
             className={`relative inline-block ${item.className ?? ""}`}
             initial={{ y: 20, opacity: 0 }}

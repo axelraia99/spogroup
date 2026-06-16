@@ -19,7 +19,7 @@ export default function WordsPullUp({
   return (
     <span ref={ref} className={`inline-flex flex-wrap ${className}`}>
       {words.map((word, i) => (
-        <span key={i} className="mr-[0.25em] overflow-hidden">
+        <span key={i} className="mr-[0.25em] overflow-hidden py-[0.15em]">
           <motion.span
             className="relative inline-block"
             initial={{ y: 20, opacity: 0 }}

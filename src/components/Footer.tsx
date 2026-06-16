@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AtSign } from "lucide-react";
 import { navLinks, siteConfig } from "@/config/site";
 
 export default function Footer() {
@@ -39,8 +40,9 @@ export default function Footer() {
               href={siteConfig.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-block font-medium text-brand-red hover:underline"
+              className="mt-3 inline-flex items-center gap-2 font-medium text-brand-red hover:underline"
             >
+              <AtSign className="h-4 w-4" strokeWidth={1.5} />
               Instagram @spogroupviajes
             </a>
           </div>

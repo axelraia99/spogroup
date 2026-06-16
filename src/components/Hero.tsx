@@ -21,10 +21,10 @@ export default function Hero() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:items-end">
             <div className="md:col-span-8">
               <h1
-                className="text-[26vw] leading-[0.85] font-medium tracking-[-0.07em] sm:text-[24vw] md:text-[22vw] lg:text-[20vw] xl:text-[19vw] 2xl:text-[20vw]"
+                className="text-3xl font-medium leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl"
                 style={{ color: "#E1E0CC" }}
               >
-                <WordsPullUp text="SPOGROUP" showAsterisk />
+                <WordsPullUp text="Transporte de larga distancia con +30 años de experiencia" />
               </h1>
             </div>
 

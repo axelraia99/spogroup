@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Icon from "./Icon";
+import { Bus, Handshake, Users } from "lucide-react";
 import WordsPullUpMultiStyle from "./WordsPullUpMultiStyle";
 import { servicios } from "@/config/site";
+
+const icons = { bus: Bus, handshake: Handshake, users: Users };
 
 const container = {
   hidden: {},
@@ -39,22 +41,25 @@ export default function Services() {
           viewport={{ once: true, margin: "-100px" }}
           className="mt-14 grid gap-3 sm:grid-cols-3 sm:gap-2"
         >
-          {servicios.map((servicio) => (
-            <motion.div
-              key={servicio.title}
-              variants={item}
-              whileHover={{ scale: 1.03 }}
-              className="rounded-2xl bg-card-2 p-8 transition-colors"
-            >
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
-                <Icon name={servicio.icon as "bus" | "handshake" | "users"} />
-              </div>
-              <h3 className="mt-6 text-xl font-semibold text-cream-strong">
-                {servicio.title}
-              </h3>
-              <p className="mt-3 text-gray-400">{servicio.description}</p>
-            </motion.div>
-          ))}
+          {servicios.map((servicio) => {
+            const IconComp = icons[servicio.icon as keyof typeof icons];
+            return (
+              <motion.div
+                key={servicio.title}
+                variants={item}
+                whileHover={{ scale: 1.03 }}
+                className="rounded-2xl bg-card-2 p-8 transition-colors"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
+                  <IconComp className="h-6 w-6" strokeWidth={1.5} />
+                </div>
+                <h3 className="mt-6 text-xl font-semibold text-cream-strong">
+                  {servicio.title}
+                </h3>
+                <p className="mt-3 text-gray-400">{servicio.description}</p>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

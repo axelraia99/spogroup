@@ -15,7 +15,7 @@ export default function About() {
             Transporte de larga distancia
           </p>
 
-          <div className="mx-auto mt-6 max-w-3xl text-3xl leading-[0.95] sm:text-4xl sm:leading-[0.9] md:text-5xl lg:text-6xl xl:text-7xl">
+          <div className="mx-auto mt-6 max-w-3xl text-3xl leading-[1.2] sm:text-4xl sm:leading-[1.15] md:text-5xl md:leading-[1.1] lg:text-6xl xl:text-7xl">
             <WordsPullUpMultiStyle
               segments={[
                 { text: "Somos SPOGROUP,", className: "font-normal text-primary" },
